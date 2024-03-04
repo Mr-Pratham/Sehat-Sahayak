@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nourishing Body</title>
+    <link rel="icon" href="./static/images/heart-pulse-solid.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./static/css/style.css">
+    <style>
+        .icon {
+            padding: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .icon a {
+            font-size: 1.4rem;
+            color: var(--light-color);
+
+        }
+
+        .icon a:hover {
+
+            color: var(--green);
+
+        }
+
+        .icon a i {
+            padding-right: .5rem;
+            color: var(--green);
+
+        }
+
+        .content {
+            padding-top: 1rem;
+
+        }
+
+        .content h3 {
+            color: var(--black);
+            font-size: 3rem;
+
+        }
+
+        .content p {
+            color: var(--light-color);
+            font-size: 1.5rem;
+            line-height: 1.8;
+            padding: 1rem 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="{{url_for('index')}}" class="logo"><i class="fas fa-heartbeat"></i> Sehat Sahayak</a>
+        <nav class="navbar">
+            {% if username %}
+            <a href="{{url_for('index')}}#home">Home</a>
+            <a href="{{url_for('index')}}#services">services</a>
+            <a href="{{url_for('index')}}#book">Book</a>
+            <a href="{{url_for('index')}}#scans">Scans</a>
+            <a href="{{url_for('index')}}#blogs">Blogs</a>
+            <a href="{{url_for('index')}}#about">about</a>
+            <a href="{{url_for('profile')}}"><span class="fas fa-user"></span></a>
+            {% else %}
+            <a href="{{url_for('login')}}">Login</a>
+            {% endif %}
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+
+    <section class="about" id="about">
+        <h1 class="heading" style="margin-top: 8rem;">"Nourish to Flourish : <span>Embracing the Transformative Power of
+                a Healthy Diet </span>"
+        </h1>
+        <div class="icon">
+            <a href="" class="disabled"><i class="fas fa-calendar"></i> 4th March, 2024</a>
+            <a href="{{url_for('admin')}}"><i class="fas fa-user"></i> By Pratham Srivastava</a>
+
+        </div>
+
+        <div class="row">
+            <div class="content">
+                <h3 style="font-size: 3.8rem;">Introduction : The Journey Begins with Nourishment</h3>
+                <p>
+                    In a world where wellness trends come and go, the enduring truth remains: the foundation of a
+                    vibrant life lies in the foods we choose to nourish ourselves with. Let's embark on a journey that
+                    transcends mere sustenance—a journey that embraces the transformative power of a healthy diet to
+                    fuel our bodies, minds, and spirits. Through mindful eating and an appreciation for the nourishment
+                    provided by nature, we can cultivate a deeper connection with our food and its role in promoting
+                    overall well-being.
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 1 : The Core Principles of a Healthy Diet</h3>
+                <p>
+                    At its heart, a healthy diet is about more than just counting calories or following rigid meal
+                    plans. It's a holistic approach to eating that emphasizes whole, nutrient-rich foods while
+                    minimizing processed and refined products. Fruits, vegetables, whole grains, lean proteins, and
+                    healthy fats form the pillars of this dietary framework, offering a symphony of flavors, textures,
+                    and nutrients that support our body's intricate needs. By prioritizing these foundational elements,
+                    we can create a balanced and sustainable approach to eating that nourishes us from the inside out.
+
+                </p>
+            </div>
+            <div class="image">
+                <img src="../static/images/blog3.1.png" alt="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="content">
+                <h3 style="font-size: 3.8rem;">Section 2 : The Impact on Physical Health</h3>
+                <p>
+                    The benefits of embracing a healthy diet extend far beyond the realm of physical appearance. By
+                    fueling our bodies with nourishing foods, we unlock a myriad of health benefits that enhance our
+                    vitality and resilience. Improved energy levels, enhanced immune function, and better digestive
+                    health are just a few of the immediate rewards that come from nourishing ourselves with wholesome
+                    ingredients. Moreover, a healthy diet serves as a powerful defense against chronic diseases such as
+                    obesity, diabetes, heart disease, and certain cancers, offering protection against the ravages of
+                    time and environmental stressors. By prioritizing nutrient-dense foods and minimizing processed and
+                    sugary items, we can support our body's natural ability to thrive and flourish.
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 3 : The Connection to Mental Well-Being
+                </h3>
+                <p>
+                    The mind-body connection is undeniable when it comes to the impact of diet on mental health. Certain
+                    nutrients, such as omega-3 fatty acids found in fatty fish and folate present in leafy greens, have
+                    been shown to support brain function and mood regulation. By prioritizing foods that nourish our
+                    minds as well as our bodies, we can experience heightened cognitive abilities, increased focus, and
+                    a greater sense of emotional well-being. Additionally, maintaining stable blood sugar levels through
+                    balanced nutrition can help prevent mood swings and promote overall mental clarity. By paying
+                    attention to the foods we consume and their impact on our mental state, we can cultivate greater
+                    emotional resilience and well-being.
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 4 : The Transformative Power of Self-Care</h3>
+                <p>
+                    Embracing a healthy diet isn't just about what we eat—it's about how we nourish ourselves on a
+                    deeper level. Each meal becomes an opportunity for self-care, self-love, and self-discovery. As we
+                    savor the vibrant flavors and textures of whole foods, we cultivate a deeper connection with
+                    ourselves and the world around us. This mindful approach to eating fosters a sense of gratitude,
+                    abundance, and fulfillment that transcends the plate. By treating ourselves with kindness and
+                    compassion through our dietary choices, we can nourish not only our bodies but also our souls.
+
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 5 : Cultivating Culinary Creativity</h3>
+                <p>
+                    A healthy diet isn't synonymous with bland or boring meals. In fact, embracing nutritious foods
+                    opens up a world of culinary possibilities, allowing us to explore diverse flavors, textures, and
+                    cooking techniques. By experimenting with new ingredients, recipes, and cultural cuisines, we can
+                    expand our palate and cultivate a deeper appreciation for the art of cooking. Whether it's whipping
+                    up a colorful salad with seasonal produce or trying our hand at homemade soups and stews, culinary
+                    creativity adds a layer of excitement and enjoyment to our dietary journey. By approaching cooking
+                    as a creative expression of nourishment and joy, we can transform our relationship with food and
+                    make mealtime a source of inspiration and delight.
+
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 6 : Building Sustainable Eating Habits</h3>
+                <p>
+                    Sustainability is a key consideration in our dietary choices, not only for the health of our planet
+                    but also for our own well-being. Adopting sustainable eating habits involves making conscious
+                    decisions to support environmental stewardship, animal welfare, and global food security. This may
+                    include choosing locally sourced, organic produce, reducing meat consumption, and minimizing food
+                    waste through mindful meal planning and storage practices. By aligning our dietary choices with
+                    principles of sustainability, we not only nourish our bodies but also contribute to a healthier and
+                    more sustainable future for generations to come. Through mindful consumption and respect for the
+                    Earth's resources, we can create a more harmonious relationship with food and the planet.
+
+
+                </p>
+
+                <h3 style="font-size: 3.8rem;">Section 7 : Navigating Dietary Preferences and Restrictions
+                </h3>
+                <p>
+                    In today's diverse culinary landscape, navigating dietary preferences and restrictions has become
+                    increasingly important. Whether due to health reasons, ethical beliefs, or cultural traditions, many
+                    individuals follow specialized diets such as vegetarian, vegan, gluten-free, or dairy-free.
+                    Understanding how to accommodate these dietary preferences and restrictions with nutritious and
+                    delicious options is essential for promoting inclusivity and ensuring that everyone can enjoy the
+                    benefits of a healthy diet. With a bit of creativity and resourcefulness, it's possible to create
+                    satisfying meals that cater to a variety of dietary needs while still prioritizing taste and
+                    nutrition. By embracing diversity and flexibility in our approach to eating, we can celebrate the
+                    richness of culinary traditions from around the world and foster a sense of inclusivity and
+                    connection through food.
+
+
+
+                </p>
+
+                <h3 style="font-size: 3.8rem;">Section 8 : Embracing Food as Medicine</h3>
+                <p>
+                    The concept of "food as medicine" highlights the powerful role that diet plays in preventing and
+                    managing chronic diseases. Certain foods contain bioactive compounds and nutrients that possess
+                    therapeutic properties, offering natural remedies for common health ailments. From anti-inflammatory
+                    spices like turmeric and ginger to heart-healthy foods like oats and walnuts, incorporating these
+                    functional foods into our diet can support our body's innate healing processes and promote long-term
+                    health and wellness. By harnessing the healing power of food, we can take proactive steps towards
+                    optimizing our health and vitality from the inside out. By incorporating a variety of nutrient-dense
+                    foods into our daily meals, we can support our body's natural ability to heal and thrive, reducing
+                    the risk of chronic diseases and promoting overall well-being.
+
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="content">
+                <h3 style="font-size: 3.8rem;">Section 9 : Sharing the Joy of Food with Others</h3>
+                <p>
+                    Food has a unique ability to bring people together, fostering connection, community, and shared
+                    experiences. Whether gathering around the dinner table with loved ones, hosting potluck dinners with
+                    friends, or volunteering at local food banks, the act of sharing food enriches our lives in profound
+                    ways. By cultivating a culture of generosity, hospitality, and compassion, we not only nourish our
+                    bodies but also nourish our souls, creating lasting memories and meaningful connections that
+                    transcend the boundaries of language, culture, and background. In sharing the joy of food with
+                    others, we spread love, kindness, and goodwill, enriching both our own lives and the lives of those
+                    around us. By fostering a sense of community and connection through food, we can create a more
+                    compassionate and inclusive world where everyone has access to nutritious and delicious meals.
+
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Conclusion : Savoring the Journey of Nourishment </h3>
+                <p>
+                    As we journey through the rich tapestry of flavors, textures, and experiences that food has to
+                    offer, let's savor each moment and embrace the transformative power of nourishment. By prioritizing
+                    whole, nutrient-rich foods, cultivating culinary creativity, and honoring the interconnectedness of
+                    food, health, and well-being, we can unlock the full potential of our dietary journey. With every
+                    bite, we nourish not only our bodies but also our minds, hearts, and spirits, creating a life that
+                    is vibrant, balanced, and deeply fulfilling. Let's celebrate the joy of eating and the abundance of
+                    nourishment that nature provides, making each meal a sacred ritual of gratitude and reverence for
+                    the gift of life itself.
+
+                </p>
+            </div>
+            <div class="image">
+                <img src="../static/images/blog3.2.png" alt="">
+            </div>
+        </div>
+
+
+    </section>
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="{{url_for('index')}}#home"><i class="fas fa-chevron-right"></i> home</a>
+                <a href="{{url_for('index')}}#services"><i class="fas fa-chevron-right"></i> services</a>
+                <a href="{{url_for('index')}}#book"><i class="fas fa-chevron-right"></i>book</a>
+                <a href="{{url_for('index')}}#scans"><i class="fas fa-chevron-right"></i> scans</a>
+                <a href="{{url_for('index')}}#blogs"><i class="fas fa-chevron-right"></i> blogs</a>
+                <a href="{{url_for('index')}}#about"><i class="fas fa-chevron-right"></i> about</a>
+            </div>
+            <div class="box">
+                <h3>our services </h3>
+                <a href=""><i class="fas fa-chevron-right"></i> Chatbot</a>
+                <a href=""><i class="fas fa-chevron-right"></i> Healthcare Blogs</a>
+                <a href=""><i class="fas fa-chevron-right"></i> Disease Prediction</a>
+                <a href=""><i class="fas fa-chevron-right"></i> Video Seminars with Doctors</a>
+
+
+
+
+            </div>
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="mailto:2006377@kiit.ac.in"><i class="fas fa-envelope"></i>2006377@kiit.ac.in</a>
+                <a href="mailto:2006326@kiit.ac.in"><i class="fas fa-envelope"></i>2006326@kiit.ac.in</a>
+                <a href="mailto:2006195@kiit.ac.in"><i class="fas fa-envelope"></i>2006195@kiit.ac.in</a>
+                <a href="mailto:2006148@kiit.ac.in"><i class="fas fa-envelope"></i>2006148@kiit.ac.in</a>
+                <a href="" class="disabled"><i class="fas fa-map-marker-alt"></i>ODISHA, INDIA</a>
+            </div>
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="https://www.linkedin.com/in/raktim-m/"><i class="fab fa-linkedin"></i>linkedin |
+                    Raktim</a>
+                <a href="https://www.linkedin.com/in/imprathamsrivastava/"><i class="fab fa-linkedin"></i>linkedin |
+                    Pratham</a>
+                <a href="https://www.linkedin.com/in/soham-dey-10/"><i class="fab fa-linkedin"></i>linkedin | Soham</a>
+                <a href="https://www.linkedin.com/in/tuhin-paul-b83a97249/"><i class="fab fa-linkedin"></i>linkedin | Tuhin</a>
+            </div>
+        </div>
+
+        <div class="credit">Major Project | Sehat Sahayak @ 2024</div>
+    </section>
+    <script src="../static/js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importance of Games</title>
+    <link rel="icon" href="./static/images/heart-pulse-solid.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./static/css/style.css">
+    <style>
+        .icon {
+            padding: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .icon a {
+            font-size: 1.4rem;
+            color: var(--light-color);
+
+        }
+
+        .icon a:hover {
+
+            color: var(--green);
+
+        }
+
+        .icon a i {
+            padding-right: .5rem;
+            color: var(--green);
+
+        }
+
+        .content {
+            padding-top: 1rem;
+
+        }
+
+        .content h3 {
+            color: var(--black);
+            font-size: 3rem;
+
+        }
+
+        .content p {
+            color: var(--light-color);
+            font-size: 1.5rem;
+            line-height: 1.8;
+            padding: 1rem 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="{{url_for('index')}}" class="logo"><i class="fas fa-heartbeat"></i> Sehat Sahayak</a>
+        <nav class="navbar">
+            {% if username %}
+            <a href="{{url_for('index')}}#home">Home</a>
+            <a href="{{url_for('index')}}#services">services</a>
+            <a href="{{url_for('index')}}#book">Book</a>
+            <a href="{{url_for('index')}}#scans">Scans</a>
+            <a href="{{url_for('index')}}#blogs">Blogs</a>
+            <a href="{{url_for('index')}}#about">about</a>
+            <a href="{{url_for('profile')}}"><span class="fas fa-user"></span></a>
+            {% else %}
+            <a href="{{url_for('login')}}">Login</a>
+            {% endif %}
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+
+    <section class="about" id="about">
+        <h1 class="heading" style="margin-top: 8rem;">" The Active Life : <span> Unveiling the Significance of Physical
+                Activity </span>"</h1>
+        <div class="icon">
+            <a href="" class="disabled"><i class="fas fa-calendar"></i> 5th March, 2024</a>
+            <a href="{{url_for('admin')}}"><i class="fas fa-user"></i> By Raktim Majumdar</a>
+
+        </div>
+
+        <div class="row">
+            <div class="content">
+                <h3 style="font-size: 3.8rem;">Introduction : Embracing the Power of Movement</h3>
+                <p>
+                    In a world where sedentary lifestyles are increasingly common, it's crucial to recognize the
+                    profound impact of physical activity on our overall well-being. Beyond the mere act of moving,
+                    engaging in regular exercise, sports, or gym workouts holds the key to unlocking our full potential,
+                    enhancing our health, and enriching our lives. Let's explore the significance of embracing an active
+                    lifestyle and the transformative effects it can have on both body and mind.
+
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 1 : Defining the Essence of Physical Activity
+                </h3>
+                <p>
+                    Physical activity encompasses a diverse range of movements, from structured gym routines to outdoor
+                    adventures and team sports. At its core, it's about engaging our bodies in ways that challenge and
+                    invigorate us, promoting health and vitality. By finding activities that resonate with our interests
+                    and goals, we lay the foundation for a sustainable and fulfilling exercise regimen.
+
+                </p>
+            </div>
+            <div class="image">
+                <img src="../static/images/blog4.1.png" alt="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="content">
+                <h3 style="font-size: 3.8rem;">Section 2 : The Holistic Benefits of Physical Activity</h3>
+                <p>
+                    The benefits of regular physical activity extend far beyond the physical realm, encompassing mental,
+                    emotional, and social well-being. Engaging in exercise boosts mood, reduces stress, and fosters a
+                    sense of connection and belonging, enriching our lives in profound ways.
+
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 3 : The Impact on Physical Health
+                </h3>
+                <p>
+                    The importance of physical activity in maintaining optimal health cannot be overstated. Regular
+                    exercise improves cardiovascular health, strengthens muscles and bones, and reduces the risk of
+                    chronic diseases, contributing to longevity and vitality.
+
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 4 : The Empowerment of Movement</h3>
+                <p>
+                    Embracing an active lifestyle isn't just about improving physical health—it's about empowering
+                    ourselves to live life to the fullest. By prioritizing movement in our daily lives, we cultivate
+                    resilience, confidence, and a sense of purpose that transcends the boundaries of the gym or sports
+                    field.
+
+
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 5 : Building Sustainable Habits</h3>
+                <p>
+                    Creating lasting habits around physical activity is key to reaping its long-term benefits. It's
+                    essential to approach exercise with a mindset of consistency, flexibility, and self-compassion. By
+                    setting realistic goals, prioritizing enjoyment, and listening to our bodies' needs, we can
+                    establish sustainable habits that support our well-being for years to come.
+
+
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 6 : Overcoming Barriers to Physical Activity</h3>
+                <p>
+                    Despite the numerous benefits of physical activity, many individuals encounter barriers that hinder
+                    their ability to engage in regular exercise. Overcoming these obstacles requires a proactive
+                    approach, such as scheduling workouts into daily routines, seeking out affordable or free exercise
+                    options, finding supportive communities, or working with healthcare professionals to address
+                    physical limitations.
+
+
+
+                </p>
+
+                <h3 style="font-size: 3.8rem;">Section 7 : Cultivating Mindful Movement Practices
+                </h3>
+                <p>
+                    Incorporating mindfulness into our approach to physical activity can deepen our connection to our
+                    bodies and enhance the overall experience of movement. Mindful movement practices, such as yoga, tai
+                    chi, or walking meditation, encourage us to be fully present in the moment, tuning into sensations,
+                    breath, and bodily cues.
+
+
+
+                </p>
+
+                <h3 style="font-size: 3.8rem;">Section 8 : Fostering Lifelong Fitness Habits</h3>
+                <p>
+                    While short-term fitness goals can provide motivation and direction, the ultimate aim of physical
+                    activity is to cultivate lifelong habits that support health and well-being. Building a sustainable
+                    fitness routine involves finding activities that are enjoyable, adaptable, and compatible with our
+                    lifestyle.
+
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="content">
+                <h3 style="font-size: 3.8rem;">Section 9 : The Role of Physical Activity in Community Health</h3>
+                <p>
+                    Physical activity not only benefits individuals but also plays a crucial role in promoting community
+                    health and well-being. Accessible parks, recreational facilities, and community programs provide
+                    opportunities for individuals of all ages and backgrounds to engage in physical activity and social
+                    interaction. Through collective action and collaboration, we can create communities where physical
+                    activity is not only encouraged but also celebrated as a cornerstone of vibrant and thriving
+                    societies.
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 10 : Harnessing Technology for Fitness Innovation</h3>
+                <p>
+                    Advancements in technology have revolutionized the way we approach fitness and exercise. From
+                    wearable fitness trackers and smartphone apps to virtual workout classes and gamified fitness
+                    challenges, technology offers a wealth of tools and resources to support our fitness goals. These
+                    innovations provide personalized feedback, track progress, and offer motivation and accountability,
+                    making it easier than ever to stay active and engaged. By harnessing the power of technology,
+                    individuals can access tailored fitness solutions that fit their needs and preferences, empowering
+                    them to lead healthier and more active lives.
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Conclusion : </h3>
+                <p>
+                    In conclusion, as we harness the power of technology for fitness innovation, we unlock new
+                    possibilities for cultivating active and healthy lifestyles. The integration of wearable devices,
+                    virtual platforms, and personalized apps empowers individuals to take ownership of their fitness
+                    journey, providing the tools and support needed to achieve their goals. By leveraging technology to
+                    overcome barriers, track progress, and stay motivated, we can create a future where physical
+                    activity is accessible, enjoyable, and integral to overall well-being. Together, let's embrace the
+                    opportunities offered by technology to revolutionize fitness and inspire healthier, more active
+                    communities.
+
+
+                </p>
+            </div>
+            <div class="image">
+                <img src="../static/images/blog4.2.png" alt="">
+            </div>
+        </div>
+
+
+
+    </section>
+    <section class="footer">
+        <div class="box-container">
+            <div class="box">
+                <h3>quick links</h3>
+                <a href="{{url_for('index')}}#home"><i class="fas fa-chevron-right"></i> home</a>
+                <a href="{{url_for('index')}}#services"><i class="fas fa-chevron-right"></i> services</a>
+                <a href="{{url_for('index')}}#book"><i class="fas fa-chevron-right"></i>book</a>
+                <a href="{{url_for('index')}}#scans"><i class="fas fa-chevron-right"></i> scans</a>
+                <a href="{{url_for('index')}}#blogs"><i class="fas fa-chevron-right"></i> blogs</a>
+                <a href="{{url_for('index')}}#about"><i class="fas fa-chevron-right"></i> about</a>
+            </div>
+            <div class="box">
+                <h3>our services </h3>
+                <a href=""><i class="fas fa-chevron-right"></i> Chatbot</a>
+                <a href=""><i class="fas fa-chevron-right"></i> Healthcare Blogs</a>
+                <a href=""><i class="fas fa-chevron-right"></i> Disease Prediction</a>
+                <a href=""><i class="fas fa-chevron-right"></i> Video Seminars with Doctors</a>
+
+
+
+
+            </div>
+            <div class="box">
+                <h3>contact info</h3>
+                <a href="mailto:2006377@kiit.ac.in"><i class="fas fa-envelope"></i>2006377@kiit.ac.in</a>
+                <a href="mailto:2006326@kiit.ac.in"><i class="fas fa-envelope"></i>2006326@kiit.ac.in</a>
+                <a href="mailto:2006195@kiit.ac.in"><i class="fas fa-envelope"></i>2006195@kiit.ac.in</a>
+                <a href="mailto:2006148@kiit.ac.in"><i class="fas fa-envelope"></i>2006148@kiit.ac.in</a>
+                <a href="" class="disabled"><i class="fas fa-map-marker-alt"></i>ODISHA, INDIA</a>
+            </div>
+            <div class="box">
+                <h3>follow us</h3>
+                <a href="https://www.linkedin.com/in/raktim-m/"><i class="fab fa-linkedin"></i>linkedin |
+                    Raktim</a>
+                <a href="https://www.linkedin.com/in/imprathamsrivastava/"><i class="fab fa-linkedin"></i>linkedin |
+                    Pratham</a>
+                <a href="https://www.linkedin.com/in/soham-dey-10/"><i class="fab fa-linkedin"></i>linkedin | Soham</a>
+                <a href="https://www.linkedin.com/in/tuhin-paul-b83a97249/"><i class="fab fa-linkedin"></i>linkedin | Tuhin</a>
+            </div>
+        </div>
+
+        <div class="credit">Major Project | Sehat Sahayak @ 2024</div>
+    </section>
+    <script src="../static/js/script.js"></script>
+
+</body>
+
+</html>

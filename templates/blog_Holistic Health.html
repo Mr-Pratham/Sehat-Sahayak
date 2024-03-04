@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holistic Health</title>
+    <link rel="icon" href="./static/images/heart-pulse-solid.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./static/css/style.css">
+    <style>
+        .icon {
+            padding: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+        }
+
+        .icon a {
+            font-size: 1.4rem;
+            color: var(--light-color);
+
+        }
+
+        .icon a:hover {
+
+            color: var(--green);
+
+        }
+
+        .icon a i {
+            padding-right: .5rem;
+            color: var(--green);
+
+        }
+
+        .content {
+            padding-top: 1rem;
+
+        }
+
+        .content h3 {
+            color: var(--black);
+            font-size: 3rem;
+
+        }
+
+        .content p {
+            color: var(--light-color);
+            font-size: 1.5rem;
+            line-height: 1.8;
+            padding: 1rem 0;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="{{url_for('index')}}" class="logo"><i class="fas fa-heartbeat"></i> Sehat Sahayak</a>
+        <nav class="navbar">
+            {% if username %}
+            <a href="{{url_for('index')}}#home">Home</a>
+            <a href="{{url_for('index')}}#services">services</a>
+            <a href="{{url_for('index')}}#book">Book</a>
+            <a href="{{url_for('index')}}#scans">Scans</a>
+            <a href="{{url_for('index')}}#blogs">Blogs</a>
+            <a href="{{url_for('index')}}#about">about</a>
+            <a href="{{url_for('profile')}}"><span class="fas fa-user"></span></a>
+            {% else %}
+            <a href="{{url_for('login')}}">Login</a>
+            {% endif %}
+        </nav>
+
+        <div id="menu-btn" class="fas fa-bars"></div>
+
+    </header>
+
+    <section class="about" id="about">
+        <h1 class="heading" style="margin-top: 8rem;">"The Holistic Path to Vibrant Living : <span>A Blueprint for Total
+                Well-Being
+            </span>"</h1>
+        <div class="icon">
+            <a href="" class="disabled"><i class="fas fa-calendar"></i> 3rd March, 2024</a>
+            <a href="{{url_for('admin')}}"><i class="fas fa-user"></i> By Tuhin Paul</a>
+
+        </div>
+
+
+        <div class="row">
+            <div class="content">
+                <h3 style="font-size: 3.8rem;">Introduction : Embracing Holistic Health</h3>
+                <p>
+                    Health embodies more than just the absence of disease; it encapsulates complete physical, mental,
+                    and social well-being. Achieving holistic health necessitates a comprehensive approach that nurtures
+                    the body, mind, soul, environment, finances, career, culture, and social connections. In this guide,
+                    we delve into strategies and practices to aid in cultivating optimal health and wellness across all
+                    facets of life.
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 1 : Nourishing the Body</h3>
+                <p>
+                    Holistic health begins with nourishing the body through wholesome nutrition, regular exercise, and
+                    adequate rest. Prioritize a balanced diet rich in whole foods, engage in varied physical activities,
+                    and emphasize quality sleep and relaxation techniques for optimal physical well-being.
+
+                    A balanced diet, rich in fruits, vegetables, lean proteins, and healthy fats, provides essential
+                    nutrients for the body's proper function. Regular physical activity not only strengthens the body
+                    but also supports mental well-being by reducing stress and improving mood. Quality sleep and
+                    relaxation are vital for allowing the body to repair and rejuvenate, promoting overall health and
+                    vitality.
+                </p>
+            </div>
+            <div class="image">
+                <img src="../static/images/blog2.1.png" alt="">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="content">
+                <h3 style="font-size: 3.8rem;">Section 2 : Cultivating Mental Wellness</h3>
+                <p>
+                    Mental wellness is a pivotal component of holistic well-being, encompassing emotional resilience,
+                    cognitive function, and psychological health. Learn to manage stress effectively, foster emotional
+                    intelligence, and incorporate mindfulness practices to enhance mental well-being.
+
+                    Stress management techniques such as deep breathing exercises, meditation, and yoga can help reduce
+                    the impact of stress on mental health. Cultivating emotional intelligence allows individuals to
+                    navigate challenging emotions and interpersonal relationships with greater ease and understanding.
+                    Mindfulness practices, such as meditation and journaling, promote present-moment awareness and inner
+                    peace, enhancing overall mental well-being.
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 3 : Nurturing Spiritual Well-Being
+                </h3>
+                <p>
+                    Spiritual well-being involves finding meaning, purpose, and connection in life, transcending
+                    religious affiliations. Foster a connection to nature, explore mind-body practices, and cultivate
+                    gratitude to nurture spiritual health and inner peace.
+
+                    Connecting with nature through activities such as hiking, gardening, or spending time outdoors can
+                    foster a sense of awe, wonder, and interconnectedness with the natural world. Mind-body practices
+                    such as yoga, tai chi, or qigong promote balance and harmony between the body, mind, and spirit.
+                    Cultivating gratitude through daily reflection or gratitude rituals can shift one's perspective and
+                    enhance overall well-being by fostering a sense of abundance and appreciation for life.
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 4 : Fostering Social Connections</h3>
+                <p>
+                    Social health is integral to overall well-being, comprising relationships, community involvement,
+                    and support networks. Cultivate meaningful connections, engage in community activities, and seek
+                    support when needed to foster social well-being.
+
+                    Nurturing relationships with family, friends, and loved ones provides a sense of belonging, support,
+                    and connection that is essential for mental and emotional well-being. Community involvement through
+                    volunteering, participating in group activities, or joining clubs and organizations fosters a sense
+                    of belonging and purpose while providing opportunities for social connection. Seeking support from
+                    trusted individuals or mental health professionals when facing challenges or experiencing emotional
+                    distress is essential for maintaining social well-being and resilience.
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 5 : Practicing Self-Care</h3>
+                <p>
+                    Self-care is essential for holistic health, encompassing activities that nurture physical, mental,
+                    and emotional well-being. Establish healthy boundaries, indulge in hobbies, and prioritize rest to
+                    promote self-care and overall wellness.
+
+                    Setting healthy boundaries allows individuals to prioritize their needs, conserve energy, and
+                    protect their physical, mental, and emotional well-being. Engaging in hobbies and activities that
+                    bring joy, fulfillment, and relaxation fosters self-expression, creativity, and emotional
+                    well-being. Prioritizing rest and relaxation through activities such as reading, taking baths, or
+                    practicing mindfulness promotes physical and mental rejuvenation, enhancing overall well-being and
+                    resilience.
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Section 6 : Environmental Wellness</h3>
+                <p>
+                    Environmental wellness entails creating a supportive and sustainable environment that fosters health
+                    and well-being. Foster healthy spaces, minimize environmental impact, and connect with nature to
+                    enhance environmental wellness.
+
+                    Creating healthy environments in homes and workplaces, such as maintaining cleanliness,
+                    organization, and natural light, promotes feelings of calmness, productivity, and well-being.
+                    Minimizing environmental impact through practices such as recycling, conserving energy, and reducing
+                    waste contributes to environmental sustainability and promotes health and well-being for current and
+                    future generations. Connecting with nature through activities such as hiking, camping, or gardening
+                    fosters a sense of connection, awe, and appreciation for the natural world, promoting overall
+                    well-being and environmental stewardship.
+
+                </p>
+
+                <h3 style="font-size: 3.8rem;">Section 7 : Financial Wellness</h3>
+                <p>
+                    Financial wellness involves effectively managing finances to achieve stability and peace of mind.
+                    Develop budgeting strategies, manage debt responsibly, and build savings to promote financial
+                    well-being.
+
+                    Developing a budget and financial plan that aligns with personal goals, values, and priorities
+                    allows individuals to track income, expenses, and savings goals effectively. Managing debt
+                    responsibly through strategies such as consolidating loans, negotiating lower interest rates, and
+                    making regular payments promotes financial stability and reduces financial stress. Building savings
+                    through establishing emergency funds and saving for long-term goals such as retirement, education,
+                    or major purchases provides financial security and peace of mind, enhancing overall financial
+                    well-being.
+
+
+                </p>
+
+                <h3 style="font-size: 3.8rem;">Section 8 : Career and Occupational Wellness</h3>
+                <p>
+                    Career and occupational wellness entail finding fulfillment and satisfaction in work and
+                    professional pursuits. Pursue purpose-driven work, maintain work-life balance, and invest in
+                    professional development to foster career well-being.
+
+                    Identifying passions, values, and strengths allows individuals to pursue careers that align with
+                    their personal and professional goals, promoting a sense of purpose, fulfillment, and satisfaction.
+                    Maintaining work-life balance through strategies such as setting boundaries, prioritizing self-care,
+                    and making time for hobbies and interests outside of work fosters overall well-being and resilience.
+                    Investing in professional development through ongoing learning, skill development, and networking
+                    opportunities enhances career satisfaction, advancement, and growth, promoting career well-being and
+                    success.
+
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="content">
+                <h3 style="font-size: 3.8rem;">Section 9 : Cultural and Social Wellness</h3>
+                <p>
+                    Cultural and social wellness involve fostering a sense of belonging and connection within diverse
+                    communities. Embrace cultural awareness, cultivate social support networks, and engage in community
+                    initiatives to promote cultural and social well-being.
+
+                    Embracing diversity, multiculturalism, and inclusion fosters cultural awareness, empathy, and
+                    understanding, promoting a sense of belonging, connection, and unity within diverse communities.
+                    Cultivating social support networks through meaningful relationships, open communication, and mutual
+                    support provides emotional, practical, and social support during times of need, enhancing overall
+                    well-being and resilience. Engaging in community initiatives, advocacy efforts, and volunteer
+                    opportunities that align with personal values and passions promotes social connectedness, civic
+                    engagement, and positive social change, fostering cultural and social well-being for individuals and
+                    communities alike.
+
+                </p>
+                <h3 style="font-size: 3.8rem;">Conclusion : Embracing Holistic Well - Being </h3>
+                <p>
+                    Holistic well-being encompasses a multifaceted approach that addresses every aspect of life. By
+                    nurturing physical, mental, social, and spiritual health, fostering environmental and financial
+                    wellness, and embracing cultural and occupational fulfillment, individuals can cultivate a sense of
+                    vitality, purpose, and fulfillment in their lives. Remember, well-being is a journey, and each step
+                    taken toward holistic health brings one closer to living their best life.
+                </p>
+            </div>
+            <div class="image">
+                <img src="../static/images/blog2.2.png" alt="">
+            </div>
+        </div>
+
+
+
+        <section class="footer">
+            <div class="box-container">
+                <div class="box">
+                    <h3>quick links</h3>
+                    <a href="{{url_for('index')}}#home"><i class="fas fa-chevron-right"></i> home</a>
+                    <a href="{{url_for('index')}}#services"><i class="fas fa-chevron-right"></i> services</a>
+                    <a href="{{url_for('index')}}#book"><i class="fas fa-chevron-right"></i>book</a>
+                    <a href="{{url_for('index')}}#scans"><i class="fas fa-chevron-right"></i> scans</a>
+                    <a href="{{url_for('index')}}#blogs"><i class="fas fa-chevron-right"></i> blogs</a>
+                    <a href="{{url_for('index')}}#about"><i class="fas fa-chevron-right"></i> about</a>
+                </div>
+                <div class="box">
+                    <h3>our services </h3>
+                    <a href=""><i class="fas fa-chevron-right"></i> Chatbot</a>
+                    <a href=""><i class="fas fa-chevron-right"></i> Healthcare Blogs</a>
+                    <a href=""><i class="fas fa-chevron-right"></i> Disease Prediction</a>
+                    <a href=""><i class="fas fa-chevron-right"></i> Video Seminars with Doctors</a>
+
+
+
+
+                </div>
+                <div class="box">
+                    <h3>contact info</h3>
+                    <a href="mailto:2006377@kiit.ac.in"><i class="fas fa-envelope"></i>2006377@kiit.ac.in</a>
+                    <a href="mailto:2006326@kiit.ac.in"><i class="fas fa-envelope"></i>2006326@kiit.ac.in</a>
+                    <a href="mailto:2006195@kiit.ac.in"><i class="fas fa-envelope"></i>2006195@kiit.ac.in</a>
+                    <a href="mailto:2006148@kiit.ac.in"><i class="fas fa-envelope"></i>2006148@kiit.ac.in</a>
+                    <a href="" class="disabled"><i class="fas fa-map-marker-alt"></i>ODISHA, INDIA</a>
+                </div>
+                <div class="box">
+                    <h3>follow us</h3>
+                    <a href="https://www.linkedin.com/in/raktim-m/"><i class="fab fa-linkedin"></i>linkedin |
+                        Raktim</a>
+                    <a href="https://www.linkedin.com/in/imprathamsrivastava/"><i class="fab fa-linkedin"></i>linkedin |
+                        Pratham</a>
+                    <a href="https://www.linkedin.com/in/soham-dey-10/"><i class="fab fa-linkedin"></i>linkedin |
+                        Soham</a>
+                    <a href="https://www.linkedin.com/in/tuhin-paul-b83a97249/"><i class="fab fa-linkedin"></i>linkedin
+                        | Tuhin</a>
+                </div>
+            </div>
+
+            <div class="credit">Major Project | Sehat Sahayak @ 2024</div>
+        </section>
+        <script src="../static/js/script.js"></script>
+
+</body>
+
+</html>
