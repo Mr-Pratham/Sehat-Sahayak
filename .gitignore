@@ -90,7 +90,7 @@ ENV/
 
 
 #admin images
-images\admin1.jpg
-images\admin2.jpg
-images\admin3.jpg
-images\admin4.jpg
+static\images\admin1.jpg
+static\images\admin2.jpg
+static\images\admin3.jpg
+static\images\admin4.jpg
