@@ -251,8 +251,10 @@ def book_appointment():
         # Notify the doctor via email
         doctor_email = User.query.filter_by(type_of_doctor=type_of_doctor).first().email
         subject = 'New Appointment Request'
-        body = f'Hello Doctor,\n\nYou have a new appointment request. Please log in to the system to approve or reject it.'
+        google_meet_link = 'https://meet.google.com/jcf-tdsf-owx'
+        body = f'Hello Doctor,\n\nYou have a new appointment request. Please log in to the system to approve or reject it. \n Connect with your patient: {google_meet_link}'
         send_mail(subject, doctor_email, body)
+
 
         return redirect(url_for('index'))
 
@@ -274,7 +276,8 @@ def approve_appointment(appointment_id):
 
     # Notify the patient via email
     subject = 'Appointment Approved'
-    body = f'Hello {appointment.name},\n\nYour appointment has been approved. Please log in to the system to view the details.'
+    google_meet_link = 'https://meet.google.com/jcf-tdsf-owx'
+    body = f'Hello {appointment.name},\n\nYour appointment has been approved. \n Connect with your doctor at your selected time: {google_meet_link}'
     send_mail(subject, appointment.email, body)
 
     return redirect(url_for('index'))
@@ -367,7 +370,33 @@ def prescribe_medicine(appointment_id):
     if appointment.type_of_doctor != doctor.type_of_doctor:
         return redirect(url_for('index'))
 
-    available_medicines = ["Medicine 1", "Medicine 2", "Medicine 3"]  # Update this with your list of medicines
+     # Update this with your list of medicines
+    available_medicines = [
+        "Alprazolam", "Alprazolam", "Amitriptyline", "Amoxicillin", "Amlodipine",
+        "Aspirin", "Atenolol", "Atorvastatin", "Azithromycin",
+        "Bevacizumab", "Bupropion", "Buspirone",
+        "Cephalexin", "Cialis", "Ciprofloxacin", "Citalopram", "Crizotinib", "Clonazepam", "Clonazepam", "Cyclobenzaprine",
+        "Diazepam", "Diazepam", "Digene", "Doxycycline", "Duloxetine", "Dutasteride",
+        "Escitalopram",
+        "Fentanyl", "Finasteride", "Fluconazole", "Fluoxetine",
+        "Folic acid", "Furosemide",
+        "Gabapentin", "Gabapentin", "Gabapentin", "Hydrocodone", "Hydrocodone", "Hydrocodone", "Hydroxyzine",
+        "Ibuprofen",
+        "Lacosamide", "Lamotrigine", "Levetiracetam", "Levothyroxine", "Lisinopril", "Lorazepam", "Lorazepam", "Losartan",
+        "Meloxicam", "Metformin", "Metformin", "Metoprolol", "Mirtazapine", "Morphine",
+        "Naproxen",
+        "Omeprazole", "Oxcarbazepine", "Oxycodone", "Oxycodone",
+        "Paracetamol", "Phenobarbital", "Phentermine", "Phenytoin", "Prednisone", "Pregabalin", "Pregabalin", "Pregabalin", "Primidone", "Propranolol",
+        "Quetiapine",
+        "Ranitidine", "Risperidone",
+        "Sertraline", "Sildenafil", "Simvastatin", "Sumatriptan",
+        "Tamsulosin", "Tapentadol", "Temozolomide", "Terazosin", "Topiramate", "Tramadol", "Tramadol", "Trazodone",
+        "Valproate", "Vardenafil", "Venlafaxine",
+        "Warfarin",
+        "Zonisamide"
+    ]
+
+
 
     if request.method == 'POST':
         selected_medicines = request.form.getlist('medicines[]')
@@ -381,7 +410,7 @@ def prescribe_medicine(appointment_id):
         header_style = ParagraphStyle(
             'Header1',
             parent=styles['Heading1'],
-            fontName='monospace',
+            fontName='Helvetica-Bold',  # Adjust the font name as per your preference
             fontSize=18,
             spaceAfter=12,
             textColor=colors.green,
@@ -397,11 +426,11 @@ def prescribe_medicine(appointment_id):
         # Create content for the PDF
         content = []
 
-        # Add Jansevak header with green color
-        jansevak_header = Paragraph("<font color='green' size='24'><b>Jansevak: We Care for Your Health</b></font>", header_style)
-        content.append(jansevak_header)
+        # Add Sehat_Sahayak header with green color
+        Sehat_Sahayak_header = Paragraph("<font color='green' size='24'><b>Sehat Sahayak: We Care for Your Health</b></font>", header_style)
+        content.append(Sehat_Sahayak_header)
 
-        # Add space after Jansevak header
+        # Add space after Sehat_Sahayak header
         content.append(Spacer(1, 12))
 
         # Add patient details
@@ -428,9 +457,11 @@ def prescribe_medicine(appointment_id):
 
         # Add doctor details and footer
         doctor_details = (
-            f"<b>Prescribed by Dr. {doctor.username} ({doctor.type_of_doctor})</b><br/>"
-            "Thank you for choosing Jansevak! We wish you good health."
+            f"<b>Prescribed by Dr. {doctor.username} ({doctor.type_of_doctor})</b> <br/>"
+            "Thank you for choosing Sehat_Sahayak! We wish you good health.<br/>"
+            "This document has been digitally signed and does not require Physical Signature - Sehat_Sahayak <br/>"
         )
+
         content.append(Paragraph(doctor_details, styles['Normal']))
 
         # Add space after doctor details

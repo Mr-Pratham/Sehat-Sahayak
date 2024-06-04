@@ -43,7 +43,17 @@
 </head>
 
 <body>
-
+    <script type="text/javascript">
+        (function(d, m){
+            var kommunicateSettings = 
+                {"appId":"1d95dc7218a03f0199fbfc058d482a341","popupWidget":true,"automaticChatOpenOnNavigation":true};
+            var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
+            s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
+            var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
+            window.kommunicate = m; m._globals = kommunicateSettings;
+        })(document, window.kommunicate || {});
+    /* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
+    </script>
     <header class="header">
         <a href="{{url_for('index')}}" class="logo"><i class="fas fa-heartbeat"></i> Sehat Sahayak</a>
         <nav class="navbar">
@@ -108,20 +118,22 @@
     </section>
 
     <section class="services" id="services">
-        <h1 class="heading">services & <span>Features</span></h1>
+        <h1 class="heading">Features & <span>Services</span></h1>
         <div class="box-container">
             <div class="glass-box">
-                <i class="fas fa-notes-medical"></i>
+                <i class="fa-brands fa-bots"></i>
                 <h3>24 | 7 AI Chat</h3>
-                <p>Get instant diagnoses and health advice from our AI assistant anytime, anywhere.</p>
-                <a href="" class="btn"> learn more <span class="fas fa-chevron-right"></span></a>
+                <p>Get instant diagnoses and health advice from our AI assistant anytime, anywhere using our Chatbot
+                    powered by Kommunicate.io. (Click the Chatbot icon)</p>
             </div>
             <div class="glass-box">
-                <i class="fas fa-comments"></i>
-                <h3>Chat with Doctors</h3>
-                <p>Message our team of licensed doctors and get personalized medical advice.</p>
-                <a href="" class="btn"> learn more <span class="fas fa-chevron-right"></span></a>
+                <i class="fa-solid fa-hands-holding-child"></i>
+                <h3>Certified Doctors</h3>
+                <p>We have a team of licensed doctors, all of them are certified and have professional pratice license.</p>
+                <!--<a href="" class="btn"> learn more <span class="fas fa-chevron-right"></span></a>-->
             </div>
+
+
             <div class="glass-box">
                 <i class="fas fa-video"></i>
                 <h3>Video Conference</h3>
@@ -385,7 +397,8 @@
                 <a href="https://www.linkedin.com/in/imprathamsrivastava/"><i class="fab fa-linkedin"></i>linkedin |
                     Pratham</a>
                 <a href="https://www.linkedin.com/in/soham-dey-10/"><i class="fab fa-linkedin"></i>linkedin | Soham</a>
-                <a href="https://www.linkedin.com/in/tuhin-paul-b83a97249/"><i class="fab fa-linkedin"></i>linkedin | Tuhin</a>
+                <a href="https://www.linkedin.com/in/tuhin-paul-b83a97249/"><i class="fab fa-linkedin"></i>linkedin |
+                    Tuhin</a>
             </div>
         </div>
 
